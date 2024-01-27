@@ -40,8 +40,9 @@
   Testing the server - run `npm run test-todoServer` command in terminal
  */
 
-import { Request, Response } from "express";
-import express from "express";
+// import { Request, Response } from "express";
+// import express from "express";
+const express = require('express');
 const port = 3000;
 const app = express();
 app.use(express.json());
@@ -120,7 +121,7 @@ app.delete("/todos/:tid", (req: any, res: any) => {
 //  if(gibrish)
 //  res.status(404).json({msg:"Page not found!!"});
 // })
-app.use((req: Request, res: Response) => {
+app.use((req: any, res:any) => {
   res.status(404).json({ msg: "404 Page not Found" });
 });
 app.listen(port);
